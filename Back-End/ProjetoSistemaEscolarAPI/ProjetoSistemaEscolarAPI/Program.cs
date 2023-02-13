@@ -6,6 +6,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<AppDbContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+builder.Services.AddCors((options) => options.AddDefaultPolicy(policy => {
+    policy.AllowAnyHeader().AllowAnyOrigin().AllowAnyMethod();
+}));
+
 builder.Services.AddControllers();
 
 builder.Services.AddEndpointsApiExplorer();

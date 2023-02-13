@@ -6,7 +6,7 @@ function App() {
   useEffect(()=>{
     api.get("/WeatherForecast")
     .then(response => console.log(response));
-  },[])
+  })
 
   return (
     <React.Fragment>
