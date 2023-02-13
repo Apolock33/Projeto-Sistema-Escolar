@@ -1,0 +1,44 @@
+﻿@model ProjetoSistemaEscolarAPI.Models.Materias
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Materias</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="MateriaId" />
+            <div class="form-group">
+                <label asp-for="NomeDaMateria" class="control-label"></label>
+                <input asp-for="NomeDaMateria" class="form-control" />
+                <span asp-validation-for="NomeDaMateria" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProfessorDaMateria" class="control-label"></label>
+                <input asp-for="ProfessorDaMateria" class="form-control" />
+                <span asp-validation-for="ProfessorDaMateria" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="QtdTurmasMatriculadas" class="control-label"></label>
+                <input asp-for="QtdTurmasMatriculadas" class="form-control" />
+                <span asp-validation-for="QtdTurmasMatriculadas" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

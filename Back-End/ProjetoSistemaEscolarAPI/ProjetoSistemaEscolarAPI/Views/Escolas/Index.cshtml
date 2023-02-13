@@ -1,0 +1,53 @@
+﻿@model IEnumerable<ProjetoSistemaEscolarAPI.Models.Escolas>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CodigoUnidade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Endereco)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QtdAlunos)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QtdTurmas)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodigoUnidade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Endereco)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QtdAlunos)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QtdTurmas)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.EscolaId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.EscolaId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.EscolaId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
