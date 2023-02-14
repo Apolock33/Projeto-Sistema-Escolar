@@ -1,16 +1,10 @@
-import React, { useEffect } from "react";
-import api from './Services/api';
+import React from "react";
 
 function App() {
 
-  useEffect(()=>{
-    api.get("/WeatherForecast")
-    .then(response => console.log(response));
-  })
-
   return (
     <React.Fragment>
-
+      
     </React.Fragment>
   );
 }
