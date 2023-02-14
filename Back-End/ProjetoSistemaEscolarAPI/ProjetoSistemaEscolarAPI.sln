@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjetoSistemaEscolarAPI", "ProjetoSistemaEscolarAPI\ProjetoSistemaEscolarAPI.csproj", "{31AA6238-64DE-4277-B22A-0F947EEFE9E7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjetoSistemaEscolarAPI", "ProjetoSistemaEscolarAPI\ProjetoSistemaEscolarAPI.csproj", "{28279FB1-22E4-4D8F-9739-669FD8ACEE6E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{31AA6238-64DE-4277-B22A-0F947EEFE9E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{31AA6238-64DE-4277-B22A-0F947EEFE9E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{31AA6238-64DE-4277-B22A-0F947EEFE9E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{31AA6238-64DE-4277-B22A-0F947EEFE9E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28279FB1-22E4-4D8F-9739-669FD8ACEE6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28279FB1-22E4-4D8F-9739-669FD8ACEE6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28279FB1-22E4-4D8F-9739-669FD8ACEE6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28279FB1-22E4-4D8F-9739-669FD8ACEE6E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {321B4F65-5FF9-4393-B1BD-5C4010807E3B}
+		SolutionGuid = {5DD3BDCE-123E-47E5-9FBD-DA2132DB1A29}
 	EndGlobalSection
 EndGlobal
