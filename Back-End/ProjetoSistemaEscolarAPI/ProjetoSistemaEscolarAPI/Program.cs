@@ -12,10 +12,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-var MyAllowPolicy = "CorsPolicy";
-
-builder.Services.AddCors(opt => opt.AddPolicy(name: MyAllowPolicy, builder => builder
-.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod()));
+builder.Services.AddCors((options) => options.AddDefaultPolicy(policy => {
+    policy.AllowAnyHeader().AllowAnyOrigin().AllowAnyMethod();
+}));
 
 builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
@@ -36,7 +35,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseCors(MyAllowPolicy);
+app.UseCors();
 
 app.UseHttpsRedirection();
 
