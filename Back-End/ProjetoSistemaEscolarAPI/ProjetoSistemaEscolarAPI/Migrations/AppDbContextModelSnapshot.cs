@@ -22,185 +22,162 @@ namespace ProjetoSistemaEscolarAPI.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("ProjetoSistemaEscolarAPI.Models.Alunos", b =>
+            modelBuilder.Entity("ProjetoSistemaEscolarAPI.Models.Aluno", b =>
                 {
-                    b.Property<Guid>("AlunoId")
+                    b.Property<Guid>("IdAluno")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("CPF")
-                        .IsRequired()
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
-                    b.Property<DateTime>("DataDeNascimento")
+                    b.Property<DateTime?>("DataDeNascimento")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid>("Escola")
+                    b.Property<Guid>("IdTurma")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("Matricula")
                         .HasColumnType("int");
 
                     b.Property<string>("NomeAluno")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("Turma")
-                        .HasColumnType("uniqueidentifier");
+                    b.HasKey("IdAluno");
 
-                    b.HasKey("AlunoId");
+                    b.HasIndex("IdTurma");
 
-                    b.HasIndex("Escola");
-
-                    b.HasIndex("Turma");
-
-                    b.ToTable("Alunos");
+                    b.ToTable("Aluno");
                 });
 
-            modelBuilder.Entity("ProjetoSistemaEscolarAPI.Models.Escolas", b =>
+            modelBuilder.Entity("ProjetoSistemaEscolarAPI.Models.Instituicao", b =>
                 {
-                    b.Property<Guid>("EscolaId")
+                    b.Property<Guid>("IdInstituicao")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("CodigoUnidade")
+                    b.Property<int>("CodigoInstituicao")
                         .HasColumnType("int");
 
-                    b.Property<string>("Endereco")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("QtdAlunos")
+                        .HasColumnType("int");
+
+                    b.Property<int>("QtdCursos")
                         .HasColumnType("int");
 
                     b.Property<int>("QtdTurmas")
                         .HasColumnType("int");
 
-                    b.HasKey("EscolaId");
+                    b.HasKey("IdInstituicao");
 
-                    b.ToTable("Escolas");
+                    b.ToTable("Instituicao");
                 });
 
-            modelBuilder.Entity("ProjetoSistemaEscolarAPI.Models.Materias", b =>
+            modelBuilder.Entity("ProjetoSistemaEscolarAPI.Models.Materia", b =>
                 {
-                    b.Property<Guid>("MateriaId")
+                    b.Property<Guid>("IdMateria")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("NomeMateria")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ProfessorDaMateria")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("QtdTurmasMatriculadas")
-                        .HasColumnType("int");
+                    b.HasKey("IdMateria");
 
-                    b.HasKey("MateriaId");
-
-                    b.ToTable("Materias");
+                    b.ToTable("Materia");
                 });
 
-            modelBuilder.Entity("ProjetoSistemaEscolarAPI.Models.MateriasDasTurmas", b =>
+            modelBuilder.Entity("ProjetoSistemaEscolarAPI.Models.MateriaXTurma", b =>
                 {
-                    b.Property<Guid>("MateriaDaTurmaId")
+                    b.Property<Guid>("IdMateriaTurma")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("Materia")
+                    b.Property<Guid>("IdMateria")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("Turma")
+                    b.Property<Guid>("IdTurma")
                         .HasColumnType("uniqueidentifier");
 
-                    b.HasKey("MateriaDaTurmaId");
+                    b.HasKey("IdMateriaTurma");
 
-                    b.HasIndex("Materia");
+                    b.HasIndex("IdMateria");
 
-                    b.HasIndex("Turma");
+                    b.HasIndex("IdTurma");
 
-                    b.ToTable("MateriasDasTurmas");
+                    b.ToTable("MateriaXTurma");
                 });
 
-            modelBuilder.Entity("ProjetoSistemaEscolarAPI.Models.Turmas", b =>
+            modelBuilder.Entity("ProjetoSistemaEscolarAPI.Models.Turma", b =>
                 {
-                    b.Property<Guid>("TurmaId")
+                    b.Property<Guid>("IdTurma")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("CodigoDaTurma")
-                        .IsRequired()
+                    b.Property<string>("CodigoTurma")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid?>("EscolasEscolaId")
+                    b.Property<Guid>("IdInstituicao")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("QtdAlunos")
-                        .HasColumnType("int");
+                    b.HasKey("IdTurma");
 
-                    b.HasKey("TurmaId");
+                    b.HasIndex("IdInstituicao");
 
-                    b.HasIndex("EscolasEscolaId");
-
-                    b.ToTable("Turmas");
+                    b.ToTable("Turma");
                 });
 
-            modelBuilder.Entity("ProjetoSistemaEscolarAPI.Models.Alunos", b =>
+            modelBuilder.Entity("ProjetoSistemaEscolarAPI.Models.Aluno", b =>
                 {
-                    b.HasOne("ProjetoSistemaEscolarAPI.Models.Escolas", "Escolas")
+                    b.HasOne("ProjetoSistemaEscolarAPI.Models.Turma", "Turma")
                         .WithMany("Alunos")
-                        .HasForeignKey("Escola")
+                        .HasForeignKey("IdTurma")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ProjetoSistemaEscolarAPI.Models.Turmas", "Turmas")
-                        .WithMany("Alunos")
-                        .HasForeignKey("Turma")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Escolas");
-
-                    b.Navigation("Turmas");
+                    b.Navigation("Turma");
                 });
 
-            modelBuilder.Entity("ProjetoSistemaEscolarAPI.Models.MateriasDasTurmas", b =>
+            modelBuilder.Entity("ProjetoSistemaEscolarAPI.Models.MateriaXTurma", b =>
                 {
-                    b.HasOne("ProjetoSistemaEscolarAPI.Models.Materias", "Materias")
+                    b.HasOne("ProjetoSistemaEscolarAPI.Models.Materia", "Materia")
                         .WithMany()
-                        .HasForeignKey("Materia")
+                        .HasForeignKey("IdMateria")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ProjetoSistemaEscolarAPI.Models.Turmas", "Turmas")
+                    b.HasOne("ProjetoSistemaEscolarAPI.Models.Turma", "Turma")
                         .WithMany()
-                        .HasForeignKey("Turma")
+                        .HasForeignKey("IdTurma")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Materias");
+                    b.Navigation("Materia");
 
-                    b.Navigation("Turmas");
+                    b.Navigation("Turma");
                 });
 
-            modelBuilder.Entity("ProjetoSistemaEscolarAPI.Models.Turmas", b =>
+            modelBuilder.Entity("ProjetoSistemaEscolarAPI.Models.Turma", b =>
                 {
-                    b.HasOne("ProjetoSistemaEscolarAPI.Models.Escolas", null)
+                    b.HasOne("ProjetoSistemaEscolarAPI.Models.Instituicao", "Instituicao")
                         .WithMany("Turmas")
-                        .HasForeignKey("EscolasEscolaId");
+                        .HasForeignKey("IdInstituicao")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Instituicao");
                 });
 
-            modelBuilder.Entity("ProjetoSistemaEscolarAPI.Models.Escolas", b =>
+            modelBuilder.Entity("ProjetoSistemaEscolarAPI.Models.Instituicao", b =>
                 {
-                    b.Navigation("Alunos");
-
                     b.Navigation("Turmas");
                 });
 
-            modelBuilder.Entity("ProjetoSistemaEscolarAPI.Models.Turmas", b =>
+            modelBuilder.Entity("ProjetoSistemaEscolarAPI.Models.Turma", b =>
                 {
                     b.Navigation("Alunos");
                 });

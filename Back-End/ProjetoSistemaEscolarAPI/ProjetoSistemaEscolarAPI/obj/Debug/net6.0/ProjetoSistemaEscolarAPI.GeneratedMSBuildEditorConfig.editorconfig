@@ -9,9 +9,33 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ProjetoSistemaEscolarAPI
 build_property.RootNamespace = ProjetoSistemaEscolarAPI
-build_property.ProjectDir = F:\Aulas e Cursos\Programação\Projetos\Projeto-Sistema-Escolar\Back-End\ProjetoSistemaEscolarAPI\ProjetoSistemaEscolarAPI\
+build_property.ProjectDir = C:\Users\carlo\OneDrive\Área de Trabalho\Projetos\Estudo\Projeto-Sistema-Escolar\Back-End\ProjetoSistemaEscolarAPI\ProjetoSistemaEscolarAPI\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = F:\Aulas e Cursos\Programação\Projetos\Projeto-Sistema-Escolar\Back-End\ProjetoSistemaEscolarAPI\ProjetoSistemaEscolarAPI
+build_property.MSBuildProjectDirectory = C:\Users\carlo\OneDrive\Área de Trabalho\Projetos\Estudo\Projeto-Sistema-Escolar\Back-End\ProjetoSistemaEscolarAPI\ProjetoSistemaEscolarAPI
 build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/carlo/OneDrive/Área de Trabalho/Projetos/Estudo/Projeto-Sistema-Escolar/Back-End/ProjetoSistemaEscolarAPI/ProjetoSistemaEscolarAPI/Views/Instituicoes/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdGl0dWljb2VzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/carlo/OneDrive/Área de Trabalho/Projetos/Estudo/Projeto-Sistema-Escolar/Back-End/ProjetoSistemaEscolarAPI/ProjetoSistemaEscolarAPI/Views/Instituicoes/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdGl0dWljb2VzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/carlo/OneDrive/Área de Trabalho/Projetos/Estudo/Projeto-Sistema-Escolar/Back-End/ProjetoSistemaEscolarAPI/ProjetoSistemaEscolarAPI/Views/Instituicoes/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdGl0dWljb2VzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/carlo/OneDrive/Área de Trabalho/Projetos/Estudo/Projeto-Sistema-Escolar/Back-End/ProjetoSistemaEscolarAPI/ProjetoSistemaEscolarAPI/Views/Instituicoes/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdGl0dWljb2VzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/carlo/OneDrive/Área de Trabalho/Projetos/Estudo/Projeto-Sistema-Escolar/Back-End/ProjetoSistemaEscolarAPI/ProjetoSistemaEscolarAPI/Views/Instituicoes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5zdGl0dWljb2VzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/carlo/OneDrive/Área de Trabalho/Projetos/Estudo/Projeto-Sistema-Escolar/Back-End/ProjetoSistemaEscolarAPI/ProjetoSistemaEscolarAPI/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
