@@ -45,12 +45,12 @@ namespace ProjetoSistemaEscolarAPI.Controllers
             return Task.FromResult(getListaInstituicao);
         }
 
-        [HttpGet("/api/v1/[controller]/getInstituicaobyid/{id}")]
-        public Task<Instituicao> GetInstituicaoById(Guid idInstituicao)
+        [HttpGet("/api/v1/[controller]/getInstituicaobyid")]
+        public Task<Instituicao> GetInstituicaoById(Guid Id)
         {
             Retorno retorno = new Retorno();
 
-            var getInstituicao = _context.Instituicao.Find(idInstituicao);
+            var getInstituicao = _context.Instituicao.Find(Id);
 
             if (getInstituicao == null)
             {

@@ -1,11 +1,14 @@
-import React, { useEffect } from "react";
-import api from "./Services/api";
+import React from "react";
+import SideMenu from "./Components/SideMenu";
+import { Rotas } from "./Routes";
+import './Assets/Css/pagesConfig.css';
 
 function App() {
 
   return (
     <React.Fragment>
-
+      <SideMenu />
+      <Rotas />
     </React.Fragment>
   );
 }
